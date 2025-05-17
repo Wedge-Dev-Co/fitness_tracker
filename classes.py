@@ -6,12 +6,12 @@
 class food_item:
     def __init__(self, name, protein, fats, carbs):
         self.name = name
+        self.description = None
         self.protein = protein
         self.fats = fats
         self.carbs = carbs
         self.cals = (9*self.fats) + (4*self.carbs) + (4*self.protein)
-        self.description = None
-           
+                   
 
 # This class represents a meal
 # Each meal is a collection of food items
