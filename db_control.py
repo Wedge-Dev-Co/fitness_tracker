@@ -75,4 +75,3 @@ def delete_data(db, delete_sql, data):
         print("Data deleted successfully.")
     except Error as e:
         print(f"Error deleting data: {e}")
-
