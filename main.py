@@ -23,8 +23,8 @@ from classes import *
 # Returns the current daily entry
 # TODO Correctly implement this function
 def get_current_entry():
-    current_entry = None # This line is for testing purposes only
-    return current_entry
+   current_entry = None # This line is for testing purposes only
+   return current_entry
 
 
 # ------------------------------------
@@ -72,14 +72,6 @@ def new_entry():
     print("creating new entry")
     entry = daily_entry()
     return entry
-
-
-## ------------------------------------
-# FUNCTION: view_entry()
-#
-# Views the current daily entry
-def view_entry(current_entry):
-    print("Viewing current entry:", current_entry)
 
 
 # ------------------------------------ MAIN APPLICATION ------------------------------------
