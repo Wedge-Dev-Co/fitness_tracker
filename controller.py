@@ -16,12 +16,10 @@ from classes import *
 # FUNCTION: get_current_entry()
 #
 # Returns the current daily entry
-# TODO Maximize computational efficiency
+# TODO: Integrate with database
 def get_current_entry(entries):
-   today = datetime.date.today()
-   for entry in entries:
-       if entry.date == today:
-           return entry
+   if entries[0].date == datetime.date.today():
+        return entries[0]
    return None
 
 

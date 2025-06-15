@@ -14,7 +14,7 @@
 
 # All imported modules
 
-from controller import *
+from ui_control import *
 
 
 # ------------------------------------ MAIN APPLICATION ------------------------------------

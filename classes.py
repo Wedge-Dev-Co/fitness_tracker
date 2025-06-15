@@ -180,5 +180,21 @@ class daily_entry:
         self.weight = None
         self.nutrition_log = nutrition_log()
         self.activity_log = activity_log()
-        self.comments = None
+        self.comments = []
 
+    def add_workout(self, workout):
+        print("Adding workout to entry")
+        self.activity_log.add_workout(workout)
+
+    def add_meal(self, meal):
+        print("Adding meal to entry")
+        self.nutrition_log.add_meal(meal)
+
+    def add_comment(self, comment):
+        print("Adding comment to entry")
+        self.comments.append(comment)
+
+    def save_entry(self):
+        print("Saving entry")
+        # Here you would implement the logic to save the entry to a database or file
+        pass

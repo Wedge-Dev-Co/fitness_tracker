@@ -6,11 +6,11 @@ import tkinter as tk
 import datetime
 from tkinter import *
 from classes import *
+from controller import *
+from classes import *
 
 
 # ------------------------------------ FUNCTIONS ------------------------------------
-
-# All functions for the application
 
 # ------------------------------------
 # FUNCTION: display_home()
@@ -34,7 +34,7 @@ def display_home():
     new_entry_button.pack(pady=20)
 
     # Create a button to view the current entry
-    current_entry_button = Button(home_page, text="Current Entry", font=("Arial", 18), bg="white", fg="black", command=lambda: display_entry(get_current_entry()))
+    current_entry_button = Button(home_page, text="Current Entry", font=("Arial", 18), bg="white", fg="black", command=lambda: display_entry(get_current_entry(entries)))
     current_entry_button.pack(pady=20)
 
     # Create a button to view past entries
@@ -62,19 +62,20 @@ def display_entry(entry):
     title_label.pack(pady=20)
 
     # Create a button to add a workout
-    add_workout_button = Button(entry_page, text="Exercise", font=("Arial", 18), bg="white", fg="black", command=lambda: entry.add_workout(workout("Workout " + str(len(entry.workouts) + 1), None, None)))
+    add_workout_button = Button(entry_page, text="Add workout", font=("Arial", 18), bg="white", fg="black", command=lambda: entry.add_workout(workout))
     add_workout_button.pack(pady=20)
 
     # Create a button to add nutrition
-    add_nutrition_button = Button(entry_page, text="Nutrition", font=("Arial", 18), bg="white", fg="black", command=lambda: entry.add_nutrition(nutrition("Nutrition " + str(len(entry.nutrition) + 1), None, None)))
-    add_nutrition_button.pack(pady=20)
+    add_meal_button = Button(entry_page, text="Add meal", font=("Arial", 18), bg="white", fg="black", command=lambda: entry.add_meal(meal))
+    add_meal_button.pack(pady=20)
 
     # Create a button to add comments
-    add_comments_button = Button(entry_page, text="Comments", font=("Arial", 18), bg="white", fg="black", command=lambda: entry.add_comments("Comments " + str(len(entry.comments) + 1)))
+    comment = StringVar()
+    add_comments_button = Button(entry_page, text="Add comments", font=("Arial", 18), bg="white", fg="black", command=lambda: entry.add_comment(comment.get()))
     add_comments_button.pack(pady=20)
 
     # Create a button to save the entry
-    save_button = Button(entry_page, text="Save entry", font=("Arial", 18), bg="white", fg="black", command=lambda: save_entry(entry))
+    save_button = Button(entry_page, text="Save entry", font=("Arial", 18), bg="white", fg="black", command=lambda: entry.save_entry())
     save_button.pack(pady=20)
 
     # Run the main loop
