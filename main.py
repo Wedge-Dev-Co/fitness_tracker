@@ -27,27 +27,20 @@ def get_current_entry():
     return current_entry
 
 
-
-
-## ------------------------------------
-# FUNCTION: new_entry()
+# ------------------------------------
+# FUNCTION: display_entry()
 #
-# Initializes a new daily entry
+# Displays the input entry
 #
-def new_entry():
-    
-    # Create new entry
-    print("creating new entry")
-    entry = daily_entry()
-    
+def display_entry(entry):
     # Initialize entry ui page
     entry_page = Tk()
-    entry_page.title("New Entry")
+    entry_page.title("Entry")
     entry_page.geometry("600x800")
     entry_page.configure(bg="black")
 
     # Create a label for the title
-    title_label = Label(entry_page, text="New entry: " + str(entry.day_of_week) + ", " + str(entry.date), font=("Arial", 24), bg="black", fg="white")
+    title_label = Label(entry_page, text="Entry: " + str(entry.day_of_week) + ", " + str(entry.date), font=("Arial", 24), bg="black", fg="white")
     title_label.pack(pady=20)
 
     # Create a button to add a workout
@@ -68,6 +61,16 @@ def new_entry():
 
     # Run the main loop
     entry_page.mainloop()
+
+
+## ------------------------------------
+# FUNCTION: new_entry()
+#
+# Initializes a new daily entry
+#
+def new_entry():
+    print("creating new entry")
+    entry = daily_entry()
     return entry
 
 
