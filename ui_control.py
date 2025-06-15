@@ -1,11 +1,13 @@
+# Hi-Fi Fitness Tracker
+# ui_control.py
+# Taylor C. Powell
+
+# Provides functions for controlling the UI
+
+
 # ------------------------------------ IMPORTS ------------------------------------
 
-# All imported modules
-
-import tkinter as tk
-import datetime
 from tkinter import *
-from classes import *
 from controller import *
 from classes import *
 
@@ -16,7 +18,8 @@ from classes import *
 # FUNCTION: display_home()
 #
 # Displays the home page
-#
+#  TODO: Integrate with database
+# 
 def display_home():
     print("Displaying home page")
     # Initialize home ui page
@@ -49,6 +52,7 @@ def display_home():
 # FUNCTION: display_entry()
 #
 # Displays the input entry
+# TODO: Integrate with database
 #
 def display_entry(entry):
     # Initialize entry ui page
