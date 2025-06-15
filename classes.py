@@ -1,3 +1,5 @@
+import datetime
+
 # ---- Nutrition Classes ----
 
 # This class represents a food item
@@ -172,10 +174,10 @@ class activity_log:
 # Each daily entry has a date, day of the week, weight, and logs for nutrition and activity
 # It also has comments
 class daily_entry:
-    def __init__(self, date, day_of_week, weight):
-        self.date = date
-        self.day_of_week = day_of_week
-        self.weight = weight
+    def __init__(self):
+        self.date = datetime.date.today()
+        self.day_of_week = self.date.strftime("%A")
+        self.weight = None
         self.nutrition_log = nutrition_log()
         self.activity_log = activity_log()
         self.comments = None
